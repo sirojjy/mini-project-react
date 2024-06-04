@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout';
-import UserList from './components/user-list';
-import UserDetail from './components/user-detail';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import HomePage from './pages/HomePage.jsx'; // Pastikan ini sesuai dengan nama file
+import UserDetail from './components/UserDetail.jsx';
 
 const App = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://reqres.in/api/users?page=1'); // Fetch initial data
-      const data = await response.json();
-      setUsers(data.data);
-    };
-    fetchData();
-  }, []);
-
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<UserList users={users} />} />
-          <Route path="/users/:userId" element={<UserDetail />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <Routes>
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/user/:id" element={<UserDetail />} />
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   );
 };
 

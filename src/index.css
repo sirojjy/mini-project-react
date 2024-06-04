@@ -1,0 +1,48 @@
+/* Tambahkan di index.css atau buat file CSS terpisah */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    max-width: 300px;
+    margin: auto;
+    padding: 1em;
+    background: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  input {
+    margin-bottom: 1em;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 1em;
+  }
+  
+  img {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  
