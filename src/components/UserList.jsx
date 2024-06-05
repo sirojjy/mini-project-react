@@ -14,15 +14,34 @@ const UserList = () => {
   }, [page]);
 
   return (
-    <div>
-      <h2>User List</h2>
-      <ul>
+    <div className="min-h-screen flex flex-col items-center bg-gray-100 p-4">
+      <h2 className="text-3xl mb-6">User List</h2>
+      <ul className="w-full max-w-lg space-y-4">
         {users.map(user => (
-          <li key={user.id}>{user.first_name} {user.last_name}</li>
+          <li key={user.id} className="bg-white p-4 rounded shadow-md flex items-center">
+            <img src={user.avatar} alt={`${user.first_name} ${user.last_name}`} className="w-16 h-16 rounded-full mr-4" />
+            <div>
+              <p className="text-lg font-semibold">{user.first_name} {user.last_name}</p>
+              <p className="text-gray-600">{user.email}</p>
+            </div>
+          </li>
         ))}
       </ul>
-      <button onClick={() => setPage(page - 1)} disabled={page === 1}>Previous</button>
-      <button onClick={() => setPage(page + 1)}>Next</button>
+      <div className="mt-6 flex space-x-4">
+        <button 
+          onClick={() => setPage(page - 1)} 
+          disabled={page === 1} 
+          className={`px-4 py-2 rounded ${page === 1 ? 'bg-gray-400' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+        >
+          Previous
+        </button>
+        <button 
+          onClick={() => setPage(page + 1)} 
+          className="px-4 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

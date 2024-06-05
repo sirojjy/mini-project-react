@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import UserList from '../components/UserList';
 
 const HomePage = () => {
-  const isAuthenticated = true; // Gantilah logika ini dengan pengecekan autentikasi yang sesuai
+  const isAuthenticated = false; // Gantilah logika ini dengan pengecekan autentikasi yang sesuai
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;

@@ -11,7 +11,8 @@ const App = () => {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/user/:id" element={<UserDetail />} />
-      <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} /> {/* Halaman utama setelah login */}
+      <Route path="/" element={<LoginPage />} />
     </Routes>
   );
 };

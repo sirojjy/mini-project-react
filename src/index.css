@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 /* Tambahkan di index.css atau buat file CSS terpisah */
 body {
     font-family: Arial, sans-serif;
