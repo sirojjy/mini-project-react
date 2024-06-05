@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../utils/api'; // Pastikan nama file dan jalur sudah benar
+import { registerUser } from '../utils/api'; 
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
