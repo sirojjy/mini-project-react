@@ -18,7 +18,7 @@ const RegisterPage = () => {
       setTimeout(() => {
         setSuccess(false);
         navigate('/login'); // Arahkan pengguna ke halaman login setelah 5 detik
-      }, 5000);
+      }, 3000);
     } catch (error) {
       setError(error.response.data.error);
     }

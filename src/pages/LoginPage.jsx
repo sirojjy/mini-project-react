@@ -13,7 +13,8 @@ const LoginPage = () => {
     try {
       const response = await loginUser({ email, password });
       console.log('Login successful:', response.data);
-      navigate('/home'); // mengarahkan pengguna ke halaman home setelah login berhasil
+      localStorage.setItem('token', response.data.token); // Simpan token di localStorage
+      navigate('/home'); // Arahkan pengguna ke halaman home setelah login berhasil
     } catch (error) {
       setError(error.response.data.error);
     }
